@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
-ReactDOM.hydrate(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+async function handler(request) {
+  const out = JSON.stringify({
+    success: true,
+    package: "wasmer/js-service-worker",
+  });
+  return new Response(out, {
+    headers: { "content-type": "application/json" },
+  });
+}
+ 
+addEventListener("fetch", handler); // Don't change this line

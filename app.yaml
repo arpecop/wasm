@@ -1,0 +1,7 @@
+---
+kind: wasmer.io/App.v0
+name: rudixlab-blogger-worker
+package: rudixlab/blogger
+cli_args:
+  - /src/index.js
+debug: false
